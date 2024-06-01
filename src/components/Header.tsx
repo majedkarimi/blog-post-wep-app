@@ -12,6 +12,10 @@ const navlintks = [
     href: "/posts",
     label: "posts",
   },
+  {
+    href: "/create-posts",
+    label: "create-posts",
+  },
 ];
 const Header = () => {
   const pathname = usePathname();
