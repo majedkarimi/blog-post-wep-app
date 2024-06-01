@@ -1,18 +1,18 @@
 import React from "react";
 type post = {
-  posts: { id: number; title: string; body: string }[];
+  data: { title: string; excerpt: string }[];
 };
 const SinglePost = async ({ params }: { params: { id: string } }) => {
-  const response = await fetch("https://dummyjson.com/posts?limit=10");
+  const response = await fetch("https://mobapi.banimode.com/api/v1/blog-post");
   const data = (await response.json()) as post;
 
   console.log();
-  const post = data.posts.find((post) => post.id === +params.id);
+  const post = data.data.find((post, index) => index === +params.id);
 
   return (
     <main>
       <h1>{post?.title}</h1>
-      <p>{post?.body}</p>
+      {post?.excerpt}
     </main>
   );
 };
