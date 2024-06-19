@@ -11,15 +11,25 @@ const page = async () => {
   return (
     <main className="text-center pt-16">
       <h1 className="text-4xl md:text:5xl font-bold mb-5">Create Post</h1>
-      <form className="h-10 space-x-2 mt-10" action={createPost}>
+      <form
+        className="space-x-2 mt-10 flex flex-col gap-5 my-10 max-w-[400px] mx-auto"
+        action={createPost}
+      >
         <input
-          className="border rounded px-3 h-full "
+          className="border rounded px-3 h-10"
           type="text"
           name="title"
           placeholder="Title for new post"
           required
         />
-        <button className="h-full bg-blue-500 px-5 rounded text-white">
+        <textarea
+          name="body"
+          placeholder="body content for new post"
+          className=" border rounded px-3 py-2"
+          required
+          rows={6}
+        />
+        <button className="bg-blue-500 px-5 rounded text-white h-12">
           Submit
         </button>
       </form>
