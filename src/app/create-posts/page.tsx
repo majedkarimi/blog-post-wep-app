@@ -1,4 +1,5 @@
 import { createPost } from "@/actions/action";
+import Button from "@/ui/Button";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 // import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 // import { redirect } from "next/navigation";
@@ -11,10 +12,7 @@ const page = async () => {
   return (
     <main className="text-center pt-16">
       <h1 className="text-4xl md:text:5xl font-bold mb-5">Create Post</h1>
-      <form
-        className="space-x-2 mt-10 flex flex-col gap-5 my-10 max-w-[400px] mx-auto"
-        action={createPost}
-      >
+      <form className="form" action={createPost}>
         <input
           className="border rounded px-3 h-10"
           type="text"
@@ -29,9 +27,7 @@ const page = async () => {
           required
           rows={6}
         />
-        <button className="bg-blue-500 px-5 rounded text-white h-12">
-          Submit
-        </button>
+        <Button text="Submit" />
       </form>
       <LogoutLink>Logout</LogoutLink>
     </main>

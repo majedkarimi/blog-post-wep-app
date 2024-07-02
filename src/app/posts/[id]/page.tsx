@@ -6,7 +6,6 @@ type post = {
 const SinglePost = async ({ params }: { params: { id: string } }) => {
   const response = await fetch("https://mobapi.banimode.com/api/v1/blog-post");
   const data = (await response.json()) as post;
-
   console.log();
   const post = data.data.find((post, index) => index === +params.id);
 
@@ -18,5 +17,4 @@ const SinglePost = async ({ params }: { params: { id: string } }) => {
     </main>
   );
 };
-
 export default SinglePost;
